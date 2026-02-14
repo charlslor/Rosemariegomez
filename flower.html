@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine's Page</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+
+  /* BACKGROUND COLLAGE */
+  .background {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    z-index: -1;
+  }
+
+  .background div {
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+  }
+
+  .img1 { background-image: url("hon/1.jpg"); }
+  .img2 { background-image: url("hon/2.jpg"); }
+  .img3 { background-image: url("hon/3.jpg"); }
+  .img4 { background-image: url("hon/4.jpg"); }
+  .img5 { background-image: url("hon/5.jpg"); }
+  .img6 { background-image: url("hon/6.jpg"); }
+  .img7 { background-image: url("hon/7.jpg"); }
+  .img8 { background-image: url("hon/8.jpg"); }
+
+  /* CONTENT */
+  .content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    animation: glow 2s infinite alternate;
+  }
+
+  h2 {
+    font-size: 2rem;
+    animation: glow 2s infinite alternate;
+  }
+
+  a {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: red;
+    text-decoration: underline;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+
+  a.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+    }
+    to {
+      text-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="background">
+  <div class="img1"></div>
+  <div class="img2"></div>
+  <div class="img3"></div>
+  <div class="img4"></div>
+  <div class="img5"></div>
+  <div class="img6"></div>
+  <div class="img7"></div>
+  <div class="img8"></div>
+</div>
+
+<div class="content">
+  <h1>Happy Valentine's Day, hon</h1>
+  <h2>I love you so much</h2>
+  <a id="clickLink" href="index.html">please click</a>
+</div>
+
+<script>
+  setTimeout(() => {
+    document.getElementById("clickLink").classList.add("show");
+  }, 3000);
+</script>
+
+</body>
+</html>
